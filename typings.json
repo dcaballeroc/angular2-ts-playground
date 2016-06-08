@@ -1,0 +1,11 @@
+{
+  "name": "angular2-ts-playground",
+  "dependencies": {},
+  "ambientDependencies": {
+    "systemjs": "registry:dt/systemjs#0.19.29+20160608101455"
+  },
+  "globalDependencies": {
+    "core-js": "registry:dt/core-js#0.0.0+20160602141332",
+    "node": "registry:dt/node#6.0.0+20160608110640"
+  }
+}

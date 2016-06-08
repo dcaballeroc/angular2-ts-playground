@@ -35,6 +35,11 @@ node_modules
 # Webpack build profile
 stats.json
 
+# Typings
+/src/typings/tsd/
+/typings/
+/tsd_typings/
+
 # IntelliJ-based IDEs cache
 .idea
 

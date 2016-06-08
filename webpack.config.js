@@ -26,20 +26,20 @@ module.exports = {
   devtool: 'cheap-module-source-map',
   module: {
     preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'source-map-loader',
-        include: PATHS.modules,
-        exclude: [
-          path.join(PATHS.modules, '@angular'),
-          path.join(PATHS.modules, 'rxjs')
-        ]
-      }
+      // {
+      //   test: /\.js$/,
+      //   loader: 'source-map-loader',
+      //   include: PATHS.modules,
+      //   exclude: [
+      //     path.join(PATHS.modules, '@angular'),
+      //     path.join(PATHS.modules, 'rxjs')
+      //   ]
+      // }
     ],
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel?cacheDirectory',
+        test: /\.ts$/,
+        loaders: ['babel?cacheDirectory', 'ts'],
         include: PATHS.src
       },
       // For global stylesheet
@@ -64,8 +64,9 @@ module.exports = {
     noParse: [/.+zone\.js\/dist\/.+/, /.+angular2\/bundles\/.+/, /.+zone\.js\/lib\/.+/]
   },
   resolve: {
-    modulesDirectories: [PATHS.modules],
-    extensions: ['', '.js']
+    root: PATHS.src,
+    modulesDirectories: ['node_modules'],
+    extensions: ['', '.ts', '.js']
   },
   postcss:[
     autoprefixer({
