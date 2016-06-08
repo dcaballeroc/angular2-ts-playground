@@ -28,11 +28,6 @@ module.exports = {
     preLoaders: [
       {
         test: /\.js$/,
-        loader: 'eslint',
-        include: PATHS.src
-      },
-      {
-        test: /\.js$/,
         loader: 'source-map-loader',
         include: PATHS.modules,
         exclude: [
