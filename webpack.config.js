@@ -12,9 +12,9 @@ var PATHS = {
 
 module.exports = {
   entry: {
-    polyfills: './src/polyfills.js',
-    vendor: './src/vendor.js',
-    app: './src/main.js'
+    polyfills: './src/polyfills.ts',
+    vendor: './src/vendor.ts',
+    app: './src/main.ts'
   },
   output: {
     path: PATHS.dist,
@@ -53,7 +53,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['raw', 'postcss', 'sass?sourceMap'],
-        include: path.join(PATHS.src, 'app'),
+        include: path.join(PATHS.src, 'app')
       },
       {
         test: /\.html$/,
