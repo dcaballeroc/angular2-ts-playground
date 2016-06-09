@@ -12,9 +12,9 @@ var PATHS = {
 
 module.exports = {
   entry: {
-    polyfills: './src/polyfills.js',
-    vendor: './src/vendor.js',
-    app: './src/main.js'
+    polyfills: './src/polyfills.ts',
+    vendor: './src/vendor.ts',
+    app: './src/main.ts'
   },
   output: {
     path: PATHS.dist,
@@ -24,13 +24,11 @@ module.exports = {
     chunkFilename: '[id].chunk.js'
   },
   devtool: 'cheap-module-source-map',
+  resolve: {
+    extensions: ['', '.js', '.ts']
+  },
   module: {
     preLoaders: [
-      {
-        test: /\.js$/,
-        loader: 'eslint',
-        include: PATHS.src
-      },
       {
         test: /\.js$/,
         loader: 'source-map-loader',
@@ -43,8 +41,8 @@ module.exports = {
     ],
     loaders: [
       {
-        test: /\.js$/,
-        loader: 'babel?cacheDirectory',
+        test: /\.ts$/,
+        loaders: ['babel?cacheDirectory', 'ts'],
         include: PATHS.src
       },
       // For global stylesheet
@@ -58,7 +56,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: ['raw', 'postcss', 'sass?sourceMap'],
-        include: path.join(PATHS.src, 'app'),
+        include: path.join(PATHS.src, 'app')
       },
       {
         test: /\.html$/,
@@ -67,10 +65,6 @@ module.exports = {
       }
     ],
     noParse: [/.+zone\.js\/dist\/.+/, /.+angular2\/bundles\/.+/, /.+zone\.js\/lib\/.+/]
-  },
-  resolve: {
-    modulesDirectories: [PATHS.modules],
-    extensions: ['', '.js']
   },
   postcss:[
     autoprefixer({
