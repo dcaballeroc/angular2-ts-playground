@@ -1,26 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouteParams } from '@angular/router-deprecated';
 
 import { HeroService } from '../common';
-import template from './heroDetail.component.html';
-import styles from './heroDetail.component.scss';
+import * as template from './heroDetail.component.html';
+import * as styles from './heroDetail.component.scss';
 
-@Component({ // eslint-disable-line new-cap
+@Component({
   template,
   styles: [styles],
   selector: 'hero-detail',
 })
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit {
   hero = undefined;
 
-  constructor(_heroService: HeroService, _routeParams: RouteParams) {
-    this._heroService = _heroService;
-    this._routeParams = _routeParams;
+  constructor(private heroService: HeroService, private routeParams: RouteParams) {
   }
 
   ngOnInit() {
-    const id = +this._routeParams.get('id');
-    this._heroService.getHero(id).then(hero => (this.hero = hero));
+    const id = +this.routeParams.get('id');
+    this.heroService.getHero(id).then(hero => (this.hero = hero));
   }
 
   goBack() {

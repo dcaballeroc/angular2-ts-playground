@@ -1,29 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
 import { HeroService } from '../common';
-import template from './dashboard.component.html';
-import styles from './dashboard.component.scss';
+import * as template from './dashboard.component.html';
+import * as styles from './dashboard.component.scss';
 
-@Component({ // eslint-disable-line new-cap
+@Component({
   template,
   styles: [styles],
   selector: 'dashboard',
 })
-export class DashboardComponent {
-  heroes = [];
+export class DashboardComponent implements OnInit {
+  heroes: any[] = [];
 
-  constructor(_router: Router, _heroService: HeroService) {
-    this._router = _router;
-    this._heroService = _heroService;
+  constructor(private router: Router, private heroService: HeroService) {
   }
 
   ngOnInit() {
-    this._heroService.getHeroes().then(heroes => (this.heroes = heroes.slice(1, 5)));
+    this.heroService.getHeroes().then(heroes => (this.heroes = heroes.slice(1, 5)));
   }
 
   gotoDetail(hero) {
     const link = ['HeroDetail', { id: hero.id }];
-    this._router.navigate(link);
+    this.router.navigate(link);
   }
 }

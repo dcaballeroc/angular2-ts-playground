@@ -2,21 +2,19 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
 import { HeroService } from '../common';
-import template from './heroes.component.html';
-import styles from './heroes.component.scss';
+import * as template from './heroes.component.html';
+import * as styles from './heroes.component.scss';
 
-@Component({ // eslint-disable-line new-cap
+@Component({
   template,
   styles: [styles],
   selector: 'heroes',
 })
 export class HeroesComponent {
-  heroes = [];
-  selectedHero = undefined;
+  heroes: any[];
+  selectedHero: any;
 
-  constructor(_router: Router, _heroService: HeroService) {
-    this._router = _router;
-    this._heroService = _heroService;
+  constructor(private router: Router, private heroService: HeroService) {
   }
 
   ngOnInit() {
@@ -24,7 +22,7 @@ export class HeroesComponent {
   }
 
   getHeroes() {
-    this._heroService.getHeroes().then(heroes => (this.heroes = heroes));
+    this.heroService.getHeroes().then(heroes => (this.heroes = heroes));
   }
 
   onSelect(hero) {
@@ -32,6 +30,6 @@ export class HeroesComponent {
   }
 
   gotoDetail() {
-    this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
+    this.router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
   }
 }
