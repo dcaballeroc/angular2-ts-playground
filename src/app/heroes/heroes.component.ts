@@ -4,9 +4,9 @@ import { Router } from '@angular/router-deprecated';
 import { HeroService } from '../common';
 
 @Component({
+  selector: 'ngp-heroes',
   template: require('./heroes.component.html'),
   styles: [require('./heroes.component.scss')],
-  selector: 'heroes',
 })
 export class HeroesComponent {
   heroes: any[];

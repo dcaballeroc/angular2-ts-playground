@@ -4,9 +4,9 @@ import { Router } from '@angular/router-deprecated';
 import { HeroService } from '../common';
 
 @Component({
+  selector: 'ngp-dashboard',
   template: require('./dashboard.component.html'),
   styles: [require('./dashboard.component.scss')],
-  selector: 'dashboard',
 })
 export class DashboardComponent implements OnInit {
   heroes: any[] = [];

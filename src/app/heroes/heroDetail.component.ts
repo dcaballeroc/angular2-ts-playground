@@ -4,9 +4,9 @@ import { RouteParams } from '@angular/router-deprecated';
 import { HeroService } from '../common';
 
 @Component({
+  selector: 'ngp-hero-detail',
   template: require('./heroDetail.component.html'),
   styles: [require('./heroDetail.component.scss')],
-  selector: 'hero-detail',
 })
 export class HeroDetailComponent implements OnInit {
   hero = undefined;
