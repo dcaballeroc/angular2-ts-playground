@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AsyncRoute, RouteConfig,
          ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
-import { HeroService } from './common';
+import { HeroService } from './shared';
 
 @Component({
   selector: 'ng2-playground',

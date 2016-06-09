@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
-import { HeroService } from '../common';
+import { Hero, HeroService } from '../shared';
 
 @Component({
   selector: 'ngp-dashboard',
@@ -9,7 +9,7 @@ import { HeroService } from '../common';
   styles: [require('./dashboard.component.scss')],
 })
 export class DashboardComponent implements OnInit {
-  heroes: any[] = [];
+  heroes: Hero[] = [];
 
   constructor(private router: Router, private heroService: HeroService) {
   }
@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
   }
 
   gotoDetail(hero) {
-    const link = ['HeroDetail', { id: hero.id }];
+    let link = ['HeroDetail', { id: hero.id }];
     this.router.navigate(link);
   }
 }
