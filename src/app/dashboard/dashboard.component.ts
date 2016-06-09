@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
 import { HeroService } from '../common';
-import * as template from './dashboard.component.html';
-import * as styles from './dashboard.component.scss';
 
 @Component({
-  template,
-  styles: [styles],
+  template: require('./dashboard.component.html'),
+  styles: [require('./dashboard.component.scss')],
   selector: 'dashboard',
 })
 export class DashboardComponent implements OnInit {

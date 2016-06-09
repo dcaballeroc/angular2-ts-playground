@@ -3,12 +3,10 @@ import { AsyncRoute, RouteConfig,
          ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
 
 import { HeroService } from './common';
-import * as template from './app.component.html';
-import * as styles from './app.component.scss';
 
 @Component({
-  template,
-  styles: [styles],
+  template: require('./app.component.html'),
+  styles: [require('./app.component.scss')],
   selector: 'ng2-playground',
   directives: [ROUTER_DIRECTIVES],
   providers: [ROUTER_PROVIDERS, HeroService],
@@ -28,7 +26,7 @@ import * as styles from './app.component.scss';
   new AsyncRoute({
     path: '/detail/:id',
     name: 'HeroDetail',
-    loader: () => System.import('./heroes').then((c: any) => c.HeroDetailComponent),
+    loader: () => System.import('./heroes').then((c) => c.HeroDetailComponent),
   }),
 ])
 export class AppComponent {

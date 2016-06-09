@@ -2,12 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { RouteParams } from '@angular/router-deprecated';
 
 import { HeroService } from '../common';
-import * as template from './heroDetail.component.html';
-import * as styles from './heroDetail.component.scss';
 
 @Component({
-  template,
-  styles: [styles],
+  template: require('./heroDetail.component.html'),
+  styles: [require('./heroDetail.component.scss')],
   selector: 'hero-detail',
 })
 export class HeroDetailComponent implements OnInit {

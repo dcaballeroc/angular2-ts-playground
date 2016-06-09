@@ -2,12 +2,10 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
 import { HeroService } from '../common';
-import * as template from './heroes.component.html';
-import * as styles from './heroes.component.scss';
 
 @Component({
-  template,
-  styles: [styles],
+  template: require('./heroes.component.html'),
+  styles: [require('./heroes.component.scss')],
   selector: 'heroes',
 })
 export class HeroesComponent {

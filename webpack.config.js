@@ -24,17 +24,20 @@ module.exports = {
     chunkFilename: '[id].chunk.js'
   },
   devtool: 'cheap-module-source-map',
+  resolve: {
+    extensions: ['', '.js', '.ts']
+  },
   module: {
     preLoaders: [
-      // {
-      //   test: /\.js$/,
-      //   loader: 'source-map-loader',
-      //   include: PATHS.modules,
-      //   exclude: [
-      //     path.join(PATHS.modules, '@angular'),
-      //     path.join(PATHS.modules, 'rxjs')
-      //   ]
-      // }
+      {
+        test: /\.js$/,
+        loader: 'source-map-loader',
+        include: PATHS.modules,
+        exclude: [
+          path.join(PATHS.modules, '@angular'),
+          path.join(PATHS.modules, 'rxjs')
+        ]
+      }
     ],
     loaders: [
       {
@@ -62,11 +65,6 @@ module.exports = {
       }
     ],
     noParse: [/.+zone\.js\/dist\/.+/, /.+angular2\/bundles\/.+/, /.+zone\.js\/lib\/.+/]
-  },
-  resolve: {
-    root: PATHS.src,
-    modulesDirectories: ['node_modules'],
-    extensions: ['', '.ts', '.js']
   },
   postcss:[
     autoprefixer({
