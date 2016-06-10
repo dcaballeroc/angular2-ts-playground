@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router-deprecated';
 
-import { HeroService } from '../common';
+import { Hero, HeroService } from '../shared';
 
 @Component({
+  selector: 'ngp-heroes',
   template: require('./heroes.component.html'),
   styles: [require('./heroes.component.scss')],
-  selector: 'heroes',
 })
 export class HeroesComponent {
-  heroes: any[];
-  selectedHero: any;
+  heroes: Hero[];
+  selectedHero: Hero;
 
   constructor(private router: Router, private heroService: HeroService) {
   }
