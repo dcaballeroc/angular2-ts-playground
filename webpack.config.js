@@ -35,6 +35,7 @@ module.exports = {
         include: PATHS.modules,
         exclude: [
           path.join(PATHS.modules, '@angular'),
+          path.join(PATHS.modules, 'angular2-in-memory-web-api'),
           path.join(PATHS.modules, 'rxjs')
         ]
       }

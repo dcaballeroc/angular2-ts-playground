@@ -26,7 +26,7 @@ import { HeroService } from './shared';
   new AsyncRoute({
     path: '/detail/:id',
     name: 'HeroDetail',
-    loader: () => System.import('./heroes').then((c: any) => c.HeroDetailComponent).catch(error => console.error('Crashed here', error)),
+    loader: () => System.import('./heroes').then((c: any) => c.HeroDetailComponent),
   }),
 ])
 export class AppComponent {

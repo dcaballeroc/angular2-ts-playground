@@ -35,7 +35,7 @@ export class HeroesComponent implements OnInit {
       this.getHeroes();
   }
 
-  deleteHero(hero: Hero, event: any) {
+  delete(hero: Hero, event: any) {
     event.stopPropagation();
     this.heroService.delete(hero)
       .then(response => {
