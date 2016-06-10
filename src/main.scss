@@ -31,6 +31,12 @@ button {
     color: #aaa;
     cursor: auto;
   }
+
+  &.delete-button{
+    float:right;
+    background-color: gray !important;
+    color:white;
+  }
 }
 
 /* everywhere else */

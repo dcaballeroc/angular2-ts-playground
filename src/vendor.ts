@@ -4,4 +4,4 @@ import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/router-deprecated';
 
-// TODO: Add RxJS and other vendors when needed
+import 'rxjs/add/operator/toPromise'
