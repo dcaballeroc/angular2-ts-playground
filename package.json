@@ -23,7 +23,7 @@
     "@angular/platform-browser": "^2.0.0-rc.1",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
     "@angular/router-deprecated": "^2.0.0-rc.1",
-    "angular2-in-memory-web-api": "0.0.11",
+    "angular2-in-memory-web-api": "^0.0.12",
     "core-js": "^2.4.0",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.12"
@@ -31,7 +31,6 @@
   "devDependencies": {
     "autoprefixer": "^6.3.6",
     "babel-core": "^6.8.0",
-    "babel-eslint": "^6.0.4",
     "babel-loader": "^6.2.4",
     "babel-plugin-angular2-annotations": "^5.1.0",
     "babel-plugin-transform-class-properties": "^6.8.0",
