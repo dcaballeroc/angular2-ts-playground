@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { AsyncRoute, RouteConfig,
          ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import { Component } from '@angular/core';
 
 import { HeroService } from './shared';
 
