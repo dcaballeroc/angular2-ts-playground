@@ -4,4 +4,6 @@ import '@angular/platform-browser';
 import '@angular/platform-browser-dynamic';
 import '@angular/router-deprecated';
 
-import 'rxjs/add/operator/toPromise'
+import 'rxjs/add/operator/toPromise';
+
+import 'bootstrap/dist/css/bootstrap.css';

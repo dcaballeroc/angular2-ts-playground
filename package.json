@@ -22,8 +22,9 @@
     "@angular/http": "^2.0.0-rc.3",
     "@angular/platform-browser": "^2.0.0-rc.3",
     "@angular/platform-browser-dynamic": "^2.0.0-rc.3",
-    "@angular/router-deprecated": "^2.0.0-rc.1",
+    "@angular/router-deprecated": "^2.0.0-rc.2",
     "angular2-in-memory-web-api": "^0.0.12",
+    "bootstrap": "^3.3.6",
     "core-js": "^2.4.0",
     "rxjs": "5.0.0-beta.6",
     "zone.js": "^0.6.12"
@@ -39,6 +40,7 @@
     "babel-preset-es2015-webpack": "^6.4.1",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.16.2",
     "node-sass": "^3.7.0",
@@ -50,7 +52,8 @@
     "ts-loader": "^0.8.2",
     "typescript": "^1.8.10",
     "typings": "^1.0.4",
-    "webpack": "^2.1.0-beta.13",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.1.0-beta.14",
     "webpack-dev-server": "^2.1.0-beta.0"
   }
 }
