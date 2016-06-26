@@ -28,6 +28,11 @@ import { HeroService } from './shared';
     name: 'HeroDetail',
     loader: () => System.import('./heroes').then((c: any) => c.HeroDetailComponent),
   }),
+  new AsyncRoute({
+    path: '/hero-form',
+    name: 'HeroForm',
+    loader: () => System.import('./heroes').then((c: any) => c.HeroFormComponent),
+  }),
 ])
 export class AppComponent {
   title = 'Tour of Heroes';
