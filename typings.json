@@ -4,6 +4,6 @@
     "core-js": "registry:dt/core-js#0.0.0+20160317120654"
   },
   "globalDependencies": {
-    "systemjs": "registry:dt/systemjs#0.19.29+20160608101455"
+    "systemjs": "registry:dt/systemjs#0.19.29+20160624042934"
   }
 }

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
 import { AsyncRoute, RouteConfig,
          ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router-deprecated';
+import { Component } from '@angular/core';
 
 import { HeroService } from './shared';
 
@@ -27,6 +27,11 @@ import { HeroService } from './shared';
     path: '/detail/:id',
     name: 'HeroDetail',
     loader: () => System.import('./heroes').then((c: any) => c.HeroDetailComponent),
+  }),
+  new AsyncRoute({
+    path: '/hero-form',
+    name: 'HeroForm',
+    loader: () => System.import('./heroes').then((c: any) => c.HeroFormComponent),
   }),
 ])
 export class AppComponent {

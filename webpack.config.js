@@ -25,13 +25,13 @@ module.exports = {
   },
   devtool: 'cheap-module-source-map',
   resolve: {
-    extensions: ['', '.js', '.ts']
+    extensions: ['', '.css', '.js', '.ts']
   },
   module: {
     preLoaders: [
       {
-        test: /\.js$/,
-        loader: 'source-map-loader',
+        test: /\.(css|js|ts)$/,
+        loader: 'source-map',
         include: PATHS.modules,
         exclude: [
           path.join(PATHS.modules, '@angular'),
@@ -46,7 +46,33 @@ module.exports = {
         loaders: ['babel?cacheDirectory', 'ts'],
         include: PATHS.src
       },
-      // For global stylesheet
+      // Vendor stylesheets
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style', 'css!postcss'),
+        include: PATHS.modules
+      },
+      {
+        test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'file',
+        include: PATHS.modules
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        loader: 'url?prefix=font/&limit=5000',
+        include: PATHS.modules
+      },
+      {
+        test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=application/octet-stream',
+        include: PATHS.modules
+      },
+      {
+        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+        loader: 'url?limit=10000&mimetype=image/svg+xml',
+        include: PATHS.modules
+      },
+      // App global stylesheet
       {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css?sourceMap!postcss!sass?sourceMap'),
